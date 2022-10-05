@@ -1,5 +1,6 @@
 using AutoMapper;
 using BLL.Services;
+using DAL;
 using Dordoy.Profiles;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,6 +25,9 @@ builder.Services.AddSingleton<SaleService, SaleService>(
 
 builder.Services.AddSingleton<WarehouseService, WarehouseService>(
     s => new WarehouseService(connectionStr));
+
+builder.Services.AddSingleton<UnitOfWork, UnitOfWork>(
+    s => new UnitOfWork(connectionStr));
 
 builder.Services.AddSingleton<IMapper, IMapper>(
     s => new MapperConfiguration(c => {

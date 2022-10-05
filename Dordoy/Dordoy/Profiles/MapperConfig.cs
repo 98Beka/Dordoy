@@ -10,6 +10,7 @@ namespace Dordoy.Profiles {
             CreateMap<User, Owner>();
             CreateMap<WarehouseView, Warehouse>();
             CreateMap<SaleView, Sale>();
+            CreateMap<CategoryView, Category>();
         }
     }
 }

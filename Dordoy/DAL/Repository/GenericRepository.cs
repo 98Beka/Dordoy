@@ -1,6 +1,5 @@
 ﻿using DAL.Contexts;
 using Microsoft.EntityFrameworkCore;
-using System.Linq.Expressions;
 
 namespace DAL.Repositories {
     public class GenericRepository<TEntity> where TEntity : class {
