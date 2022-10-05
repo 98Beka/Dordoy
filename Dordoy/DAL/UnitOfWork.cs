@@ -26,9 +26,9 @@ namespace DAL {
             dbContextOptions = optionsBuilder.Options;
         }
 
-        public GenericRepository<Sale> SaleRepository {
+        public SaleRepository SaleRepository {
             get {
-                return new GenericRepository<Sale>(context);
+                return new SaleRepository(context);
             }
         }
 
@@ -39,9 +39,9 @@ namespace DAL {
             }
         }
 
-        public GenericRepository<Owner> OwnerRepository {
+        public OwnerRepository OwnerRepository {
             get {
-                return new GenericRepository<Owner>(context);
+                return new OwnerRepository(context);
             }
         }
 
@@ -51,9 +51,9 @@ namespace DAL {
             }
         }
 
-        public GenericRepository<Warehouse> WarehouseRepository {
+        public WarehouseRepository WarehouseRepository {
             get {
-                return new GenericRepository<Warehouse>(context);
+                return new WarehouseRepository(context);
             }
         }
 

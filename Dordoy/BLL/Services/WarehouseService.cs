@@ -16,7 +16,7 @@ namespace BLL.Services {
         }
 
         public void Create(Warehouse value) {
-            _database.WarehouseRepository.Insert(value);
+            _database.WarehouseRepository.Create(value);
             _database.Save();
         }
         public IEnumerable<Warehouse> Get() {

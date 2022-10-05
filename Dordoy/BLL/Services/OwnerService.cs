@@ -16,7 +16,7 @@ namespace BLL.Services {
         }
 
         public void Create(Owner value) {
-            _database.OwnerRepository.Insert(value);
+            _database.OwnerRepository.Create(value);
             _database.Save();
         }
 

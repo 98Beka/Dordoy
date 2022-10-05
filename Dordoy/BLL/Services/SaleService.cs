@@ -1,11 +1,6 @@
 ﻿using BLL.Models;
 using DAL;
 using DAL.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL.Services {
     public class SaleService {
@@ -16,7 +11,7 @@ namespace BLL.Services {
         }
 
         public void Create(Sale value) {
-            _database.SaleRepository.Insert(value);
+            _database.SaleRepository.Create(value);
             _database.Save();
         }
         public IEnumerable<Sale> Get() {
