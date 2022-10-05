@@ -11,7 +11,7 @@ namespace BLL.Services {
         }
 
         public void Create(Product value) {
-            _database.ProductRepository.Insert(value);
+            _database.ProductRepository.Create(value);
             _database.Save();
         }
         public IEnumerable<Product> Get(ProductFilter filter) {
@@ -32,5 +32,18 @@ namespace BLL.Services {
             _database.Save();
         }
 
+        public void BindCategory(int productId, int categoryId) {
+            var product = _database.ProductRepository.GetByID(productId);
+            var category = _database.CategoryRepository.GetByID(categoryId);
+            product.Categories.Add(category);
+            _database.Save();
+        }
+
+        public void SeparateCategory(int productId, int categoryId) {
+            var product = _database.ProductRepository.GetByID(productId);
+            var category = _database.CategoryRepository.GetByID(categoryId);
+            product.Categories.Remove(category);
+            _database.Save();
+        }
     }
 }

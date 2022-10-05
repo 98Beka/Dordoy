@@ -1,6 +1,7 @@
 ﻿using DAL.Contexts;
 using DAL.Models;
 using DAL.Repositories;
+using DAL.Repository;
 using Microsoft.EntityFrameworkCore;
 
 namespace DAL {
@@ -44,9 +45,9 @@ namespace DAL {
             }
         }
 
-        public GenericRepository<Product> ProductRepository {
+        public ProductRepository ProductRepository {
             get {
-                return new GenericRepository<Product>(context);
+                return new ProductRepository(context);
             }
         }
 

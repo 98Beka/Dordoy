@@ -43,5 +43,15 @@ namespace Dordoy.Controllers {
         public void Delete(int id) {
             productService.Delete(id);
         }
+
+        [HttpGet("BindCategory")]
+        public void BindCategory(int productId, int categoryId) {
+            productService.BindCategory(productId, categoryId);
+        }
+
+        [HttpGet("SeparateCategory")]
+        public void SeparateCategory(int productId, int categoryId) {
+            productService.SeparateCategory(productId, categoryId);
+        }
     }
 }
